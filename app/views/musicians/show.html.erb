@@ -7,7 +7,7 @@
         <h5 class="profile-text"><%= @musician.name %></h5>
         <h4 class="profile-text"><%= @musician.instrument %></h4>
         <p><%= @musician.profile %></p>
-        <a href="#" class="btn submit-button">Go somewhere</a>
+        <%= link_to "Create a band", new_musician_band_path(@musician), class:"btn submit-button" %>
       </div>
   </div>
 </div>

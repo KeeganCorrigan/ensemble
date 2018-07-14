@@ -26,4 +26,14 @@ describe "an anonymous user signs up as a musician" do
     expect(page).to have_content(musician_1.instrument)
     expect(page).to have_content(musician_1.profile)
   end
+
+  it "links to create a band page" do
+    musician_1 = Musician.create!(name: "iuhasudh", username: "oauihdiuhas", instrument: "guitar", profile: "ouhaudhasiuhui iuhiuhdsa uhiuhw19hsa", password: "1234")
+
+    visit musician_path(musician_1)
+
+    click_on "Create a band"
+
+    expect(current_path).to eq(new_musician_band_path(musician_1))
+  end
 end

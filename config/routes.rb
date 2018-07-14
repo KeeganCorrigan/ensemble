@@ -3,7 +3,9 @@ Rails.application.routes.draw do
 
     root 'home#index'
 
-    resources :musicians
+    resources :musicians do
+      resources :bands
+    end
 
     get '/login', to: 'sessions#new'
     post '/login', to: 'sessions#create'
