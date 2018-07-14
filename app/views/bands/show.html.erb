@@ -1,0 +1,17 @@
+<div class="col-sm-12 .col-centered text-center">
+  <div class="profile-container">
+    <div class="musician-container">
+      <div class="imgdiv">
+      </div>
+        <h5 class="profile-text"><%= @band.name %></h5>
+        <h4 class="profile-text"><%= @band.genre %></h4>
+        <%= link_to "Join the band", join_band_path(current_user, @band) %>
+        <%= link_to "Write a song", new_musician_band_path(@musician), class:"btn submit-button" %>
+        <h5>Band members</h5>
+          <% @band.musicians.each do |musician| %>
+            <p><%= link_to musician.name, musician_path(musician) %></p>
+          <% end %>
+        </h5>
+      </div>
+  </div>
+</div>

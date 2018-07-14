@@ -4,8 +4,11 @@ Rails.application.routes.draw do
     root 'home#index'
 
     resources :musicians do
-      resources :bands
+      resources :bands do
+        post '/join_band', to: 'bandsongs#create'
+      end
     end
+
 
     get '/login', to: 'sessions#new'
     post '/login', to: 'sessions#create'
