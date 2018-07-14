@@ -5,5 +5,6 @@ class Song < ApplicationRecord
                         :status
 
   belongs_to :band
+  has_many :iterations
 
 end

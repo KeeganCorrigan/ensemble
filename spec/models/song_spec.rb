@@ -9,5 +9,6 @@ describe Song, type: :model do
   end
   describe "relationships" do
     it { should belong_to(:band) }
+    it { should have_many(:iterations) }
   end
 end
