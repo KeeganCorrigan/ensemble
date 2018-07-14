@@ -1,6 +1,39 @@
 @import "shared_values";
 
 
+.profile-text {
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.profile-container {
+  margin-top: 30px;
+  background-color: black;
+  border: 1px solid $neon-blue;
+  border-radius: 5px;
+  animation-name: color;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+}
+
+.musician-container {
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+
+.col-centered{
+    float: none;
+    margin: 0 auto;
+}
+
+.imgdiv {
+  width: 200px;
+  height: 200px;
+  background-image: url("muppet_1.jpg");
+  border-radius: 50%;
+  background-size: cover;
+  margin: auto;
+}
 .base-forms {
   margin-top: 50px;
 }
