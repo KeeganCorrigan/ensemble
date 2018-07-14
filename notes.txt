@@ -35,3 +35,5 @@ class CreateIterations < ActiveRecord::Migration[5.1]
     end
   end
 end
+
+<a class="nav-link text-white text-right link-blue-border" href="#">Log in</a>
