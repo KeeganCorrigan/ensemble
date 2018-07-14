@@ -1,5 +1,14 @@
-require 'rails_helper'
+require "rails_helper"
 
-RSpec.describe Band, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+describe Band, type: :model do
+  describe "validations" do
+    it { should validate_presence_of(:name) }
+    it { should validate_presence_of(:photo) }
+    it { should validate_presence_of(:genre) }
+  end
+  describe "relationships" do
+    it {should have_many(:band_musicians) }
+    it {should have_many(:musicians).through(:band_musicians) }
+    it {should have_many(:songs) }
+  end
 end

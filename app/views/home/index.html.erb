@@ -1,2 +1,9 @@
-<%= link_to new_band_path %>
-<%= link_to log_in %>
+<% if current_user %>
+  <%= render partial:"signed_in" %>
+<% else %>
+  <%= render partial:"not_signed_in" %>
+<% end %>
+
+<%= link_to "signup", new_musician_path %>
+<%= link_to "login", login_path %>
+<%= link_to "logout", logout_path, method:"delete" %>
