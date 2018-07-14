@@ -1,0 +1,49 @@
+@import "shared_values";
+
+body {
+  font-family: $primary-font;
+  color: white;
+  font-size: 35px;
+  background-color: black;
+}
+
+.nav-link {
+  font-size: 50px;
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+
+.link-pink-border {
+  border-bottom: 5px solid;
+  border-image: linear-gradient(to right, $neon-pink 33%, $neon-yellow 33%, $neon-yellow 66%,$neon-blue 66%, $neon-blue  100%) 5;
+}
+
+.parallax {
+    background-image: url("img_parallax.jpg");
+    height: 500px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+main {
+  margin-right: 8%;
+  margin-left: 8%;
+}
+
+#nav-logo {
+  font-family: $logo-font;
+  color: white;
+  font-size: 70px;
+}
+
+.navbar-toggler-icon {
+  color: $neon-pink;
+  padding: 35px !important;
+}
+
+.navbar {
+    border-bottom: 5px solid;
+    border-image: linear-gradient(to right, $neon-pink 33%, $neon-yellow 33%, $neon-yellow 66%,$neon-blue 66%, $neon-blue  100%) 5;
+  }
