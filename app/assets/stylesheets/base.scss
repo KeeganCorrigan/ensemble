@@ -1,21 +1,59 @@
 @import "shared_values";
 
+
+.base-forms {
+  margin-top: 50px;
+}
+
+.submit-button {
+  color: white;
+  background-color: $neon-pink;
+  text-align: center;
+  border-radius: 5px;
+  margin-top: 20px;
+  margin-left: 5px;
+}
+
 body {
   font-family: $primary-font;
   color: white;
-  font-size: 35px;
+  font-size: 16px;
   background-color: black;
+  background-image: url("soundwaves.jpg")
 }
 
 .nav-link {
-  font-size: 50px;
-  padding-top: 25px;
-  padding-bottom: 25px;
+  font-size: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 .link-pink-border {
-  border-bottom: 5px solid;
-  border-image: linear-gradient(to right, $neon-pink 33%, $neon-yellow 33%, $neon-yellow 66%,$neon-blue 66%, $neon-blue  100%) 5;
+  border-bottom: 1px solid;
+  border-color: $neon-blue;
+  animation-name: color;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes color {
+  0% {
+    border-color: $neon-blue;
+  }
+  50% {
+    border-color: $neon-pink;
+  }
+  100% {
+    border-color: $neon-yellow;
+  }
+
+  50% {
+    border-color: $neon-pink;
+  }
+
+  0% {
+    border-color: $neon-blue
+  }
 }
 
 .parallax {
@@ -35,12 +73,12 @@ main {
 #nav-logo {
   font-family: $logo-font;
   color: white;
-  font-size: 70px;
+  font-size: 25px;
 }
 
 .navbar-toggler-icon {
   color: $neon-pink;
-  padding: 35px !important;
+  padding: 15px !important;
 }
 
 .navbar {
