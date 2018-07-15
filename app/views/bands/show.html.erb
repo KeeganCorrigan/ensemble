@@ -5,7 +5,9 @@
       </div>
         <h5 class="profile-text"><%= @band.name %></h5>
         <h4 class="profile-text"><%= @band.genre %></h4>
-        <%= link_to "Join the band", join_band_path(current_user, @band) %>
+        <% if current_user && @band.user_in_band?(current_user.id) %>
+          <%= link_to "Join the band", musician_band_join_band_path(current_user, @band), method:"post" %>
+        <% end %>
         <%= link_to "Write a song", new_musician_band_path(@musician), class:"btn submit-button" %>
         <h5>Band members</h5>
           <% @band.musicians.each do |musician| %>

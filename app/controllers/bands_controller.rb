@@ -15,7 +15,6 @@ class BandsController < ApplicationController
   end
 
   def show
-
   end
 
   private

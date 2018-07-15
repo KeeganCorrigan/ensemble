@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
     resources :musicians do
       resources :bands do
-        post '/join_band', to: 'bandsongs#create'
+        post '/join_band', to: 'band_musicians#create'
       end
     end
 

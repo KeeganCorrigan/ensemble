@@ -31,7 +31,7 @@ describe "a musician goes to band show page" do
     musician_2 = Musician.create!(name:"iuoij98h", username: "oaasdhas", instrument:"guitar", profile:"ouhauijasdui iuhiuhdsa uhiuhw19hsa", password:"1234")
     band_1 = musician_1.bands.create!(name:"pink floyd", genre:"rock", photo:"ioaodj")
 
-    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(musician)
+    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(musician_2)
 
     visit musician_band_path(musician_1, band_1)
 
@@ -42,5 +42,16 @@ describe "a musician goes to band show page" do
     expect(current_path).to eq(musician_band_path(musician_2, band_1))
     expect(page).to have_content("Welcome to the band")
     expect(page).to have_content("Create a song")
+  end
+
+  it "can not click on join band if it's already in band" do
+    musician_1 = Musician.create!(name:"iuhasudh", username: "oauihdiuhas", instrument:"guitar", profile:"ouhaudhasiuhui iuhiuhdsa uhiuhw19hsa", password:"1234")
+    band_1 = musician_1.bands.create!(name:"pink floyd", genre:"rock", photo:"ioaodj")
+
+    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(musician_1)
+
+    visit musician_band_path(musician_1, band_1)
+
+    expect(page).to_not have_content("Join the band")
   end
 end
