@@ -1,5 +1,30 @@
 @import "shared_values";
 
+* {
+    box-sizing: border-box
+} 
+
+h1 {
+  padding-top: 15px;
+}
+
+.custom-select {
+  width: 60%;
+}
+
+.large-button {
+  font-size: 30px;
+  width: 100%;
+  border-radius: 0px;
+}
+
+.drop-down-menu {
+  background: white;
+}
+
+.home-container {
+  margin: 0 auto;
+}
 
 .profile-text {
   padding-top: 6px;
@@ -42,16 +67,20 @@
   color: white;
   background-color: $neon-pink;
   text-align: center;
-  border-radius: 5px;
-  margin-top: 20px;
-  margin-left: 5px;
+  margin-top: 8px;
+}
+
+html {
+  height: 100%;
 }
 
 body {
+  height: 100%;
   font-family: $primary-font;
   color: white;
   font-size: 16px;
   background-color: black;
+  background-attachment: fixed;
   background-image: url("https://s3-us-west-1.amazonaws.com/kc-ensemble/soundwaves.jpg")
 }
 

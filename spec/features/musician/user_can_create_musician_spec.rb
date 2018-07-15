@@ -30,9 +30,13 @@ describe "an anonymous user signs up as a musician" do
   it "links to create a band page" do
     musician_1 = Musician.create!(name: "iuhasudh", username: "oauihdiuhas", instrument: "guitar", profile: "ouhaudhasiuhui iuhiuhdsa uhiuhw19hsa", password: "1234")
 
+    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(musician_1)
+
     visit musician_path(musician_1)
 
-    click_on "Create a band"
+    within "#create-button" do
+      click_on "Create a band"
+    end
 
     expect(current_path).to eq(new_musician_band_path(musician_1))
   end

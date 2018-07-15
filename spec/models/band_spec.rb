@@ -20,8 +20,8 @@ describe Band, type: :model do
         band_1 = musician_1.bands.create!(name:"pink floyd", genre:"rock", photo:"ioaodj")
         musician_2 = Musician.create!(name:"iuhasasddh", username: "oa345has", instrument:"guitar", profile:"ou213213asiuhui iuhiuhdsa uhiuhw19hsa", password:"1234")
 
-        expect(band_1.user_in_band?(musician_1.id)).to eq(false)
-        expect(band_1.user_in_band?(musician_2.id)).to eq(true)
+        expect(band_1.user_in_band?(musician_1.id)).to eq(true)
+        expect(band_1.user_in_band?(musician_2.id)).to eq(false)
       end
     end
   end

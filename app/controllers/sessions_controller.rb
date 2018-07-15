@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
     @musician = Musician.find_by(username: params[:session][:username])
     if @musician && @musician.authenticate(params[:session][:password])
       session[:musician_id] = @musician.id
-      redirect_to musicians_path
+      redirect_to musician_path(@musician)
     else
       redirect_to login_path
     end

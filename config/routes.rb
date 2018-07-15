@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-
     root 'home#index'
 
     resources :musicians do
@@ -9,6 +7,9 @@ Rails.application.routes.draw do
       end
     end
 
+    resources :songs
+
+    resources :bands, only: [:index]
 
     get '/login', to: 'sessions#new'
     post '/login', to: 'sessions#create'

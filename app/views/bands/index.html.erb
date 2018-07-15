@@ -1,0 +1,19 @@
+<div class="col-sm-12 .col-centered text-center">
+  <% @bands.each do |band| %>
+  <div class="profile-container">
+    <div class="musician-container">
+      <div class="imgdiv">
+      </div>
+        <h5 class="profile-text"><%= band.name %></h5>
+        <h4 class="profile-text"><%= band.genre %></h4>
+        <h4 class="profile-text"> Band members</h4>
+        <% band.musicians.each do |musician| %>
+          <p><%= musician.name %></p>
+        <% end %>
+        <% if current_user && band.user_in_band?(current_user.id) %>
+          <%= link_to "Join the band", musician_band_join_band_path(current_user, band), method:"post" %>
+        <% end %>
+      </div>
+  </div>
+  <% end %>
+</div>

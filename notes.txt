@@ -37,3 +37,5 @@ class CreateIterations < ActiveRecord::Migration[5.1]
 end
 
 <a class="nav-link text-white text-right link-blue-border" href="#">Log in</a>
+
+before_action :authorized?, only: [:index]

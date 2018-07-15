@@ -1,0 +1,22 @@
+<div class="col-sm-12 .col-centered text-center">
+  <div class="profile-container">
+  <%= form_for @song, :html => { :class => 'base-forms' } do |f| %>
+      <%= f.label :title %>
+    <div class="form-group">
+      <%= f.text_field :title, class:"input-medium" %>
+    </div>
+      <%= f.label :timing %>
+    <div class="form-group">
+      <%= f.text_field :timing %>
+    </div>
+      <%= f.label :genre %>
+    <div>
+    <div class="form-group">
+      <%= f.text_field :genre %>
+    </div>
+    <div class="form-group">
+      <%= f.submit "Update song", class:"submit-button btn" %>
+    </div>
+  </div>
+</div>
+<% end %>

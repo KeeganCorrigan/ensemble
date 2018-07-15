@@ -17,10 +17,14 @@ class BandsController < ApplicationController
   def show
   end
 
+  def index
+    @bands = Band.all
+  end
+
   private
 
   def set_musician
-    @musician = Musician.find(params[:musician_id])
+    @musician = Musician.find_by(id: params[:musician_id])
   end
 
   def set_band

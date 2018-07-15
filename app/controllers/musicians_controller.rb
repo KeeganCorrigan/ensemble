@@ -1,8 +1,7 @@
 class MusiciansController < ApplicationController
-  before_action :authorized?, only: [:index]
 
   def index
-
+    @musicians = Musician.all
   end
 
   def new

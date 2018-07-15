@@ -9,6 +9,6 @@ class Band < ApplicationRecord
   has_many :musicians, through: :band_musicians
 
   def user_in_band?(id)
-    musicians.where(id: id).blank?
+    musicians.where(id: id).exists?
   end
 end
