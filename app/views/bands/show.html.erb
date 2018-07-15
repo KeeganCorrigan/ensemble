@@ -1,0 +1,23 @@
+<div class="col-sm-12 .col-centered text-center">
+  <div class="profile-container">
+    <div class="musician-container">
+      <div class="imgdiv">
+      </div>
+        <h5 class="profile-text"><%= @band.name %></h5>
+        <h4 class="profile-text"><%= @band.genre %></h4>
+        <% if current_user && @band.user_in_band?(current_user.id) == false %>
+          <%= link_to "Join the band", musician_band_join_band_path(current_user, @band), method:"post" %>
+        <% end %>
+        <% if current_user && @band.user_in_band?(current_user.id) %>
+          <div id="write-song">
+            <%= link_to "Write a song", new_song_path(current_user, @band), class:"btn submit-button" %>
+          </div>
+        <% end %>
+        <h5>Band members</h5>
+          <% @band.musicians.each do |musician| %>
+            <p><%= link_to musician.name, musician_path(musician) %></p>
+          <% end %>
+        </h5>
+      </div>
+  </div>
+</div>

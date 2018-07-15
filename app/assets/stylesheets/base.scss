@@ -1,6 +1,64 @@
 @import "shared_values";
 
+* {
+    box-sizing: border-box
+} 
 
+h1 {
+  padding-top: 15px;
+}
+
+.custom-select {
+  width: 60%;
+}
+
+.large-button {
+  font-size: 30px;
+  width: 100%;
+  border-radius: 0px;
+}
+
+.drop-down-menu {
+  background: white;
+}
+
+.home-container {
+  margin: 0 auto;
+}
+
+.profile-text {
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.profile-container {
+  margin-top: 30px;
+  background-color: black;
+  border: 1px solid $neon-blue;
+  border-radius: 5px;
+  animation-name: color;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+}
+
+.musician-container {
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+
+.col-centered{
+    float: none;
+    margin: 0 auto;
+}
+
+.imgdiv {
+  width: 200px;
+  height: 200px;
+  background-image: url("https://s3-us-west-1.amazonaws.com/kc-ensemble/muppet_1.jpg");
+  border-radius: 50%;
+  background-size: cover;
+  margin: auto;
+}
 .base-forms {
   margin-top: 50px;
 }
@@ -9,17 +67,21 @@
   color: white;
   background-color: $neon-pink;
   text-align: center;
-  border-radius: 5px;
-  margin-top: 20px;
-  margin-left: 5px;
+  margin-top: 8px;
+}
+
+html {
+  height: 100%;
 }
 
 body {
+  height: 100%;
   font-family: $primary-font;
   color: white;
   font-size: 16px;
   background-color: black;
-  background-image: url("soundwaves.jpg")
+  background-attachment: fixed;
+  background-image: url("https://s3-us-west-1.amazonaws.com/kc-ensemble/soundwaves.jpg")
 }
 
 .nav-link {

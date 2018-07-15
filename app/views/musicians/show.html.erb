@@ -1,1 +1,23 @@
-<%= @musician.name %>
+<div class="col-sm-12 .col-centered text-center">
+  <% if current_user && (@musician.id == current_user.id) %>
+  <h1> Your Profile </h1>
+  <% end %>
+  <div class="profile-container">
+    <div class="musician-container">
+      <div class="imgdiv">
+      </div>
+        <h5 class="profile-text"><%= @musician.name %></h5>
+        <h4 class="profile-text"><%= @musician.instrument %></h4>
+        <p><%= @musician.profile %></p>
+        <div id="create-button">
+            <% if current_user && (@musician.id == current_user.id) %>
+            <%= link_to "Create a band", new_musician_band_path(@musician) %>
+            <% end %>
+          </div>
+        <h4>Bands</h4>
+        <% @musician.bands.each do |band| %>
+          <p><%= link_to band.name, musician_band_path(@musician, band), class:"btn submit-button large-button" %></p>
+        <% end %>
+      </div>
+  </div>
+</div>

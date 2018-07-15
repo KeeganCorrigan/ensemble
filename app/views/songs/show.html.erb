@@ -1,0 +1,18 @@
+<div class="col-sm-12 .col-centered text-center">
+  <h1><%= @song.title %></h1>
+  <div class="profile-container">
+    <div class="musician-container">
+        <h5 class="profile-text"><%= @song.genre %></h5>
+        <h5 class="profile-text"><%= @song.timing %></h5>
+        <h5 class="profile-text"><%= @band.name %></h5>
+        <h5 class="profile-text">Contributors</h5>
+          <% @band.musicians.each do |musician| %>
+          <p> <%= link_to musician.name, musician_path(musician) %></p>
+        <% end %>
+        <% if current_user && @band.user_in_band?(current_user.id) %>
+          <%= link_to "Update song", edit_song_path(@song), class:"btn submit-button large-button" %>
+          <%= link_to "Trash song", song_path(@song), method:"delete", class:"btn submit-button large-button" %>
+        <% end %>
+    </div>
+  </div>
+</div>

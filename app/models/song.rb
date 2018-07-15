@@ -1,10 +1,9 @@
 class Song < ApplicationRecord
   validates_presence_of :title,
                         :timing,
-                        :genre,
-                        :status
+                        :genre
 
   belongs_to :band
-  has_many :iterations
+  has_many :iterations, dependent: :destroy
 
 end
