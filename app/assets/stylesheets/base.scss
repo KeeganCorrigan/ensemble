@@ -2,10 +2,18 @@
 
 * {
     box-sizing: border-box
-} 
+}
 
 h1 {
   padding-top: 15px;
+}
+
+#sign-up-text {
+  padding-bottom: 20px;
+}
+
+a {
+  color: $neon-blue;
 }
 
 .custom-select {
@@ -81,7 +89,8 @@ body {
   font-size: 16px;
   background-color: black;
   background-attachment: fixed;
-  background-image: url("https://s3-us-west-1.amazonaws.com/kc-ensemble/soundwaves.jpg")
+  background-position: 5% 5%;
+  background-image: url("https://s3-us-west-1.amazonaws.com/kc-ensemble/background-soundwave-edited.jpg")
 }
 
 .nav-link {
