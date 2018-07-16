@@ -1,25 +1,29 @@
-<div class="col-sm-12 .col-centered text-center">
+<div>
   <% if current_user && (@musician.id == current_user.id) %>
   <h1> Your Profile </h1>
-  <%= link_to "Edit", edit_musician_path(current_user), class: "btn submit-button large-button" %>
-  <%= link_to "Delete", musician_path(current_user), method:"delete", class: "btn submit-button large-button" %>
   <% end %>
+
   <div class="profile-container">
     <div class="musician-container">
       <div class="imgdiv">
       </div>
-        <h5 class="profile-text"><%= @musician.name %></h5>
-        <h4 class="profile-text"><%= @musician.instrument %></h4>
-        <p><%= @musician.profile %></p>
-        <div id="create-button">
-            <% if current_user && (@musician.id == current_user.id) %>
-            <%= link_to "Create a band", new_musician_band_path(@musician) %>
-            <% end %>
-          </div>
-        <h4>Bands</h4>
+        <h4 class="profile-heading">Name:</h4>
+        <p class="profile-text"><%= @musician.name %></p>
+        <h4 class="profile-heading">Instrument:</h4>
+        <p class="profile-text"><%= @musician.instrument %></p>
+        <h4 class="profile-heading">Profile:</h4>
+        <p class="profile-text"><%= @musician.profile %></p>
+        <h4 class="profile-heading">Bands</h4>
         <% @musician.bands.each do |band| %>
-          <p><%= link_to band.name, musician_band_path(@musician, band), class:"btn submit-button large-button" %></p>
+          <p class="profile-text"><%= link_to band.name, musician_band_path(@musician, band), class:"btn submit-button large-button" %></p>
         <% end %>
       </div>
+      <% if current_user && (@musician.id == current_user.id) %>
+      <%= link_to "Edit", edit_musician_path(current_user), class: "btn submit-button large-button" %>
+      <%= link_to "Delete", musician_path(current_user), method:"delete", class: "btn submit-button large-button" %>
+      <div id="create-button">
+      <%= link_to "Create a band", new_musician_band_path(@musician), class: "btn submit-button large-button" %>
+    </div>
+      <% end %>
   </div>
 </div>

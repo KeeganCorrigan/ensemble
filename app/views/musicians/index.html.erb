@@ -1,18 +1,17 @@
-<div class="col-sm-12 .col-centered text-center">
-  <h1> Musicians </h1>
-  <% @musicians.each do |musician| %>
-  <div class="profile-container">
-    <div class="musician-container">
-      <div class="imgdiv">
-      </div>
-        <h5 class="profile-text"><%= musician.name %></h5>
-        <h4 class="profile-text"><%= musician.instrument %></h4>
-        <p><%= musician.profile %></p>
-        <h4>Bands</h4>
-        <% musician.bands.each do |band| %>
-          <p><%= link_to band.name, musician_band_path(musician, band), class:"btn submit-button large-button" %></p>
-        <% end %>
-      </div>
+<h1> Musicians </h1>
+<% @musicians.each do |musician| %>
+<%= link_to musician_path(musician) do %>
+<div class="mp-container">
+  <div class="picture-container">
+    <div class="imgdiv">
+    </div>
   </div>
-  <% end %>
+  <div class="profile-container">
+    <p class="profile-text"><strong>Name:</strong> <%= musician.name %></p>
+    <p class="profile-text"><strong>Instrument:</strong> <%= musician.instrument %></p>
+    <p class="profile-text"><strong>Profile:</strong> <%= musician.profile %></p>
+  </div>
 </div>
+<% end %>
+
+<% end %>
