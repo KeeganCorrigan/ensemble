@@ -9,8 +9,14 @@ class MusiciansController < ApplicationController
   end
 
   def create
-    @musician = Musician.create(musician_params)
-    redirect_to musician_path(@musician)
+    @musician = Musician.new(musician_params)
+    if @musician.save
+      session[:musician_id] = @musician.id
+      redirect_to musician_path(@musician)
+    else
+      flash.now[:alert] = @musician.errors.full_messages.join("<br>").html_safe
+      render :new
+    end
   end
 
   def show
