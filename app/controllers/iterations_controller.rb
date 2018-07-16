@@ -20,6 +20,6 @@ class IterationsController < ApplicationController
   private
 
   def iteration_params
-    params.require(:iteration).permit(:content, :recording, :comment, :clip)
+    params.require(:iteration).permit(:content, :recording, :comment)
   end
 end
