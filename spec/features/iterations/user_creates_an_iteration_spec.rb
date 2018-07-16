@@ -13,7 +13,7 @@ describe "a logged in user in the band makes a song" do
 
     click_on "New version"
 
-    expect(current_path).to eq(new_song_iteration(song_1))
+    expect(current_path).to eq(new_song_iteration_path(song_1))
   end
 
   it "fills out form for a new iteration" do
@@ -22,12 +22,24 @@ describe "a logged in user in the band makes a song" do
 
     song_1 = band_1.songs.create!(title: "iojoijqw", timing: "asdoad", genre: "ohuadsoia")
 
+    content = "oijasdij"
+    recording = "ij298soa"
+    comment = "ij2189noisda"
+
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(musician_1)
 
-    visit new_song_iteration(song_1)
+    visit new_song_iteration_path(song_1)
 
-    fill_in :content, with: content
-    fill_in :recording, with: recording
-    fill_in :comment, with: comment
+    fill_in :iteration_content, with: content
+    fill_in :iteration_recording, with: recording
+    fill_in :iteration_comment, with: comment
+
+    click_on "Create iteration"
+
+    expect(current_path).to eq(song_iteration_path(song_1, Iteration.first))
+
+    expect(page).to have_content(content)
+    expect(page).to have_content(recording)
+    expect(page).to have_content(comment)
   end
 end

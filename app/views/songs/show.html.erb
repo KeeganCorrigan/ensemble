@@ -12,6 +12,7 @@
         <% if current_user && @band.user_in_band?(current_user.id) %>
           <%= link_to "Update song", edit_song_path(@song), class:"btn submit-button large-button" %>
           <%= link_to "Trash song", song_path(@song), method:"delete", class:"btn submit-button large-button" %>
+          <%= link_to "New version", new_song_iteration_path(@song), class:"btn submit-button large-button" %> 
         <% end %>
     </div>
   </div>
