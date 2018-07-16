@@ -1,5 +1,11 @@
 @import "shared_values";
 
+.band-profile-heading {
+  color: black;
+  background-color: $neon-yellow;
+  font-weight: bold;
+  width: 120%;
+}
 
 .alert {
   margin-bottom: 0;
@@ -28,6 +34,23 @@
   margin-bottom: 15px;
   color: white;
   align-items: center;
+}
+
+.mp-show-container {
+  display: flex;
+  background-color: black;
+  border-top: 1px solid $neon-blue;
+  border-bottom: 1px solid $neon-blue;
+  animation-name: color;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  margin-bottom: 15px;
+  color: white;
+}
+
+.musician-container-band-show {
+  padding-left: 30px;
+
 }
 
 * {
@@ -70,6 +93,14 @@ a {
   padding-top: 25px;
   padding-bottom: 25px;
   background-color: black;
+  width: 50%;
+}
+
+.musician-container-show {
+  padding-top: 25px;
+  padding-bottom: 25px;
+  background-color: black;
+  width: 45%;
 }
 
 .col-centered{

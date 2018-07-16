@@ -1,29 +1,29 @@
-<div>
-  <% if current_user && (@musician.id == current_user.id) %>
-  <h1> Your Profile </h1>
-  <% end %>
 
-  <div class="profile-container">
-    <div class="musician-container">
-      <div class="imgdiv">
-      </div>
-        <h4 class="profile-heading">Name:</h4>
-        <p class="profile-text"><%= @musician.name %></p>
-        <h4 class="profile-heading">Instrument:</h4>
-        <p class="profile-text"><%= @musician.instrument %></p>
-        <h4 class="profile-heading">Profile:</h4>
-        <p class="profile-text"><%= @musician.profile %></p>
-        <h4 class="profile-heading">Bands</h4>
-        <% @musician.bands.each do |band| %>
-          <p class="profile-text"><%= link_to band.name, musician_band_path(@musician, band), class:"btn submit-button large-button" %></p>
-        <% end %>
-      </div>
-      <% if current_user && (@musician.id == current_user.id) %>
-      <%= link_to "Edit", edit_musician_path(current_user), class: "btn submit-button large-button" %>
-      <%= link_to "Delete", musician_path(current_user), method:"delete", class: "btn submit-button large-button" %>
-      <div id="create-button">
-      <%= link_to "Create a band", new_musician_band_path(@musician), class: "btn submit-button large-button" %>
+<% if current_user && (@musician.id == current_user.id) %>
+  <h1> Your Profile </h1>
+<% end %>
+
+<div class="mp-show-container">
+  <div class="musician-container-show">
+    <div class="imgdiv">
     </div>
+    <h4 class="profile-heading">Name:</h4>
+    <p class="profile-text"><%= @musician.name %></p>
+    <h4 class="profile-heading">Instrument:</h4>
+    <p class="profile-text"><%= @musician.instrument %></p>
+    <h4 class="profile-heading">Profile:</h4>
+    <p class="profile-text"><%= @musician.profile %></p>
+  </div>
+  <div class="musician-container-band-show">
+  <h4 class="band-profile-heading">Bands</h4>
+    <% @musician.bands.each do |band| %>
+      <%= link_to band.name, musician_band_path(@musician, band), class:"btn submit-button large-button" %>
       <% end %>
   </div>
 </div>
+  <% if current_user && (@musician.id == current_user.id) %>
+  <%= link_to "Edit", edit_musician_path(current_user), class: "btn submit-button large-button" %>
+  <%= link_to "Delete", musician_path(current_user), method:"delete", class: "btn submit-button large-button" %>
+  <div id="create-button">
+    <%= link_to "Create a band", new_musician_band_path(@musician), class: "btn submit-button large-button" %>
+<% end %>
