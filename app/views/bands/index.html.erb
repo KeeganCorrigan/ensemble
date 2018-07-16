@@ -1,17 +1,23 @@
 
   <h1> Bands </h1>
   <% @bands.each do |band| %>
-  <div class="profile-container">
-    <div class="musician-container">
-        <h5 class="profile-text"><%= band.name %></h5>
-        <h4 class="profile-text"><%= band.genre %></h4>
-        <h4 class="profile-text"> Band members</h4>
+  <%= link_to musician_band_path(band.musicians.first, band) do %>
+  <div class="mp-container">
+    <div class="picture-container">
+      <div class="imgdiv">
+      </div>
+    </div>
+      <div class="profile-container">
+        <p class="profile-text"><strong>Name:</strong> <%= band.name %></p>
+        <p class="profile-text"><strong>Genre:</strong><%= band.genre %></p>
+        <p class="profile-text"><strong>Members:</strong>
         <% band.musicians.each do |musician| %>
-          <p><%= musician.name %></p>
+          <%= musician.name + "  " %>
         <% end %>
         <% if current_user && band.user_in_band?(current_user.id) == false %>
           <%= link_to "Join the band", musician_band_join_band_path(current_user, band), method:"post", class: "btn submit-button large-button" %>
         <% end %>
       </div>
   </div>
+  <% end %>
   <% end %>
