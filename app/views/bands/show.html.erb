@@ -10,7 +10,7 @@
         <% end %>
         <% if current_user && @band.user_in_band?(current_user.id) %>
           <div id="write-song">
-            <%= link_to "Write a song", new_song_path(current_user, @band), class:"btn submit-button" %>
+            <%= link_to "Write a song", new_song_path(current_user, @band), class:"btn submit-button large-button" %>
           </div>
         <% end %>
         <h5>Band members</h5>

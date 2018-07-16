@@ -7,7 +7,9 @@ Rails.application.routes.draw do
       end
     end
 
-    resources :songs
+    resources :songs do
+      resources :iterations
+    end
 
     resources :bands, only: [:index]
 

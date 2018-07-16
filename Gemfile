@@ -5,6 +5,10 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+gem 'paperclip'
+
+gem 'aws-sdk', '~> 2'
+
 gem 'will_paginate'
 
 gem 'chartkick'
