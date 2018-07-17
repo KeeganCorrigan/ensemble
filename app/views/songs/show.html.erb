@@ -23,18 +23,23 @@
     <div class="musician-container-band-show">
     <h4 class="band-profile-heading">Members</h4>
       <% @band.musicians.each do |musician| %>
-        <p><%= link_to musician.name, musician_path(musician) %> | <%= musician.instrument %></p>
+        <p class="profile-text"><%= link_to musician.name, musician_path(musician) %> | <%= musician.instrument %></p>
       <% end %>
     </div>
   </div>
 
 <% if @iteration_last %>
-  <div class="last-iteration">
-    <h4 class="iteration-heading">Last iteration</h4>
-    <h4 class="profile-heading"> Author: </h4>
-    <p class="profile-text"> <%= @last_author %></p>
-    <h4 class="profile-heading"> Comment: </h4>
-    <p class="profile-text"><%= @iteration_last.comment %></p>
+  <div class="iteration-container">
+    <div class="iteration-sample-container">
+      <i class="fas fa-play"></i>
+    </div>
+    <div class="last-iteration">
+      <h4 class="iteration-heading">Last iteration</h4>
+      <h4 class="profile-heading"> Author: </h4>
+      <p class="profile-text"> <%= @last_author %></p>
+      <h4 class="profile-heading"> Comment: </h4>
+      <p class="profile-text"><%= @iteration_last.comment %></p>
+    </div>
   </div>
 <% end %>
 

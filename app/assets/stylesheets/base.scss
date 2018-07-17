@@ -1,5 +1,35 @@
 @import "shared_values";
 
+.iteration-heading {
+  padding-left: 8px;
+  padding-top: 5px;
+}
+
+.iteration-container {
+  display: flex;
+}
+
+.iteration-sample-container {
+  background: $neon-pink;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30%;
+}
+
+.fa-play {
+  font-size: 90px;
+}
+
+.play-override {
+  font-size: 50px;
+}
+
+.last-iteration {
+  background: black;
+  width: 70%;
+}
+
 .song-heading {
   background-color: $neon-yellow;
   color: black;
@@ -21,6 +51,11 @@
   margin-left: 35%;
   margin-top: 10%;
   margin-bottom: 10%;
+}
+
+.mic-override {
+  margin: 0;
+  font-size: 35px;
 }
 
 .profile-container {
