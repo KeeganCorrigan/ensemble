@@ -1,5 +1,9 @@
 @import "shared_values";
 
+.profile-container {
+  width: 100%;
+}
+
 .hidden {
   display: none;
 }
@@ -28,7 +32,7 @@
   color: black;
   background-color: $neon-yellow;
   font-weight: bold;
-  width: 120%;
+  width: 200%;
 }
 
 .alert {

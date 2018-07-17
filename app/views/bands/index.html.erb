@@ -15,7 +15,7 @@
           <%= musician.name + "  " %>
         <% end %>
           <% if current_user && band.user_in_band?(current_user.id) == false %>
-            <%= link_to "Join the band", musician_band_join_band_path(current_user, band), method:"post", class: "btn submit-button large-button" %>
+            <%= link_to "Join the band", musician_band_join_band_path(current_user, band), method:"post", class: "btn submit-button large-button", data: {confirm: "Are you sure?"} %>
           <% end %>
       </div>
   </div>

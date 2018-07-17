@@ -4,6 +4,7 @@ Rails.application.routes.draw do
     resources :musicians do
       resources :bands do
         post '/join_band', to: 'band_musicians#create'
+        delete '/leave_band', to: 'band_musicians#destroy'
       end
     end
 

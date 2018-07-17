@@ -39,7 +39,7 @@
         </div>
       </div>
     <% if current_user && @band.user_in_band?(current_user.id) == false %>
-      <%= link_to "Join the band", musician_band_join_band_path(current_user, @band), method:"post" %>
+      <%= link_to "Join the band", musician_band_join_band_path(current_user, @band), method:"post", data: {confirm: "Are you sure?"} %>
     <% end %>
     <% if current_user && @band.user_in_band?(current_user.id) %>
       <div id="write-song">
@@ -47,6 +47,9 @@
       </div>
     <% end %>
 
-      </div>
+      <% if current_user && @band.user_in_band?(current_user.id) %>
+        <%= link_to "Break up the band", musician_band_leave_band_path(current_user, @band), method:"delete", data: {confirm: "Are you sure?"}, class:"btn submit-button large-button" %>
+      <% end %>
+    </div>
   </div>
 </div>
