@@ -28,7 +28,7 @@ describe "a logged in user in the band makes a song" do
 
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(musician_1)
 
-    visit new_song_iteration_path(song_1)
+    visit new_song_path(song_1)
 
     fill_in :iteration_content, with: content
     fill_in :iteration_recording, with: recording
@@ -36,7 +36,7 @@ describe "a logged in user in the band makes a song" do
 
     click_on "Create iteration"
 
-    expect(current_path).to eq(song_iteration_path(song_1, Iteration.first))
+    expect(current_path).to eq(song_path(song_1))
 
     expect(page).to have_content(content)
     expect(page).to have_content(recording)

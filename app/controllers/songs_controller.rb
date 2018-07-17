@@ -14,6 +14,7 @@ class SongsController < ApplicationController
 
   def show
     @band = Band.find(@song.band_id)
+    @iteration = Iteration.new
   end
 
   def destroy

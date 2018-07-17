@@ -52,7 +52,7 @@ describe "a logged in user visits new song path" do
 
     visit song_path(song_1)
 
-    click_on "Update song"
+    click_on "edit"
 
     expect(current_path).to eq(edit_song_path(song_1))
   end
@@ -96,7 +96,7 @@ describe "a logged in user visits new song path" do
 
     visit song_path(song_1)
 
-    click_on "Trash song"
+    click_on "delete"
 
     expect(current_path).to eq(musician_band_path(musician_1, band_1))
     expect(Song.count).to eq(0)
