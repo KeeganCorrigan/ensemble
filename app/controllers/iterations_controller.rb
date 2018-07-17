@@ -8,9 +8,9 @@ class IterationsController < ApplicationController
     @song = Song.find(params[:song_id])
     @iteration = @song.iterations.new(iteration_params)
     @iteration.musician_id = current_user.id
-    @iteration.save
-
-    redirect_to song_iteration_path(@song, @iteration)
+    if @iteration.save
+      redirect_to song_path(@song)
+    end
   end
 
   def show

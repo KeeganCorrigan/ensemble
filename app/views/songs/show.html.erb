@@ -28,6 +28,7 @@
     </div>
   </div>
 
+
 <% if current_user && @band.user_in_band?(current_user.id) %>
 <div class="iteration-form">
 <%= form_for [@song, @iteration], :html => { :class => 'base-forms', multipart: true } do |f| %>
@@ -48,4 +49,16 @@
   </div>
 </div>
 <% end %>
+<% end %>
+
+<% if @iteration_last %>
+  <h4 class="profile-heading"> Author: </h4>
+  <p class="profile-text"> <%= @last_author %></p>
+  <h4 class="profile-heading"> Comment: </h4>
+  <p class="profile-text"><%= @iteration_last.comment %></p>
+  <!-- <iframe
+    frameborder="0"
+    width="100%"
+    src="#{<%= @iteration_last.fix_drive_link %>}"
+  /iframe> -->
 <% end %>

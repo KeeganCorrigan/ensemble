@@ -15,6 +15,8 @@ class SongsController < ApplicationController
   def show
     @band = Band.find(@song.band_id)
     @iteration = Iteration.new
+    @iteration_last = @song.iterations.last
+    @last_author = Musician.find(@iteration_last.musician_id).name
   end
 
   def destroy
