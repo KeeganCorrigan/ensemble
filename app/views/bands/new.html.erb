@@ -1,6 +1,6 @@
 <div class="col-sm-12 .col-centered text-center">
   <div class="profile-container">
-  <%= form_for [@musician, @band], :html => { :class => 'base-forms' } do |f| %>
+  <%= form_for [@musician, @band], :html => { :class => 'align-forms' } do |f| %>
       <%= f.label :name %>
     <div class="form-group">
       <%= f.text_field :name, class:"input-medium" %>
@@ -14,7 +14,7 @@
       <%= f.text_field :genre %>
     </div>
     <div class="form-group">
-      <%= f.submit "Make the band", class:"submit-button btn" %>
+      <%= f.submit "Make the band", class:"submit-button btn medium-button" %>
     </div>
   </div>
 </div>

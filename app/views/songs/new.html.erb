@@ -1,6 +1,5 @@
 <div class="col-sm-12 .col-centered text-center">
-  <div class="profile-container">
-  <%= form_for @song, :html => { :class => 'base-forms' } do |f| %>
+  <%= form_for @song, :html => { :class => 'align-forms' } do |f| %>
   <% if current_user && current_user.bands.exists? %>
       <%= f.label :title %>
     <div class="form-group">
@@ -20,12 +19,11 @@
       <%= f.collection_select :band_id, current_user.bands.order(:name), :id, :name, {}, {class: "custom-select"} %>
     </div>
     <div class="form-group">
-      <%= f.submit "Make the song", class:"submit-button btn" %>
+      <%= f.submit "Make the song", class:"submit-button btn medium-button" %>
     </div>
     <% else %>
       <p> You need a band to write a song!</p>
       <%= link_to "Create a band", new_musician_band_path(current_user), class:"btn large-button submit-button" %>
     <% end %>
-  </div>
 </div>
 <% end %>
