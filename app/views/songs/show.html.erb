@@ -1,5 +1,5 @@
 <div class="musician-profile-manager">
-<h1 class="musician-profile-heading"><%= @song.title %></h1>
+<h1 class="musician-profile-heading"> <div class="song-heading">SONG</div> <%= @song.title %></h1>
 <% if current_user && @band.user_in_band?(current_user.id) %>
   <%= link_to edit_song_path(@song) do %>
     <i class="far fa-edit"><span class="hidden">edit</span></i></i>
@@ -28,6 +28,15 @@
     </div>
   </div>
 
+<% if @iteration_last %>
+  <div class="last-iteration">
+    <h4 class="iteration-heading">Last iteration</h4>
+    <h4 class="profile-heading"> Author: </h4>
+    <p class="profile-text"> <%= @last_author %></p>
+    <h4 class="profile-heading"> Comment: </h4>
+    <p class="profile-text"><%= @iteration_last.comment %></p>
+  </div>
+<% end %>
 
 <% if current_user && @band.user_in_band?(current_user.id) %>
 <div class="iteration-form">
@@ -49,16 +58,4 @@
   </div>
 </div>
 <% end %>
-<% end %>
-
-<% if @iteration_last %>
-  <h4 class="profile-heading"> Author: </h4>
-  <p class="profile-text"> <%= @last_author %></p>
-  <h4 class="profile-heading"> Comment: </h4>
-  <p class="profile-text"><%= @iteration_last.comment %></p>
-  <iframe
-    frameborder="0"
-    width="100%"
-    src="#{<%= @iteration_last.fix_drive_link %>}"
-  /iframe>
 <% end %>
