@@ -7,6 +7,7 @@ class Musician < ApplicationRecord
                         :profile,
                         :instrument
 
-  has_many :band_musicians
+  has_many :band_musicians, dependent: :destroy
   has_many :bands, through: :band_musicians
+
 end

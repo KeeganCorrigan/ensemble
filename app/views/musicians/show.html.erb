@@ -1,6 +1,14 @@
 
 <% if current_user && (@musician.id == current_user.id) %>
-  <h1> Your Profile </h1>
+  <div class="musician-profile-manager">
+    <h1 class="musician-profile-heading"> Your Profile </h1>
+    <%= link_to edit_musician_path(current_user) do %>
+      <i class="far fa-edit"><span class="hidden">edit</span></i></i>
+    <% end %>
+    <%= link_to musician_path(current_user), method:"delete", data: {confirm: "Are you sure?"} do %>
+      <i class="fas fa-trash-alt"><span class="hidden">delete</span></i></i>
+    <% end %>
+  </div>
 <% end %>
 
 <div class="mp-show-container">
@@ -22,8 +30,7 @@
   </div>
 </div>
   <% if current_user && (@musician.id == current_user.id) %>
-  <%= link_to "Edit", edit_musician_path(current_user), class: "btn submit-button large-button" %>
-  <%= link_to "Delete", musician_path(current_user), method:"delete", class: "btn submit-button large-button" %>
-  <div id="create-button">
-    <%= link_to "Create a band", new_musician_band_path(@musician), class: "btn submit-button large-button" %>
+    <div id="create-button">
+      <%= link_to "Create a band", new_musician_band_path(@musician), class: "btn submit-button large-button" %>
+    </div>
 <% end %>

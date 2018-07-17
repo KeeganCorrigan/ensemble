@@ -1,5 +1,29 @@
 @import "shared_values";
 
+.hidden {
+  display: none;
+}
+
+.musician-profile-manager {
+  display: flex;
+  align-items: center;
+}
+
+.musician-profile-heading {
+  flex-grow: 1;
+}
+
+.fa-edit, .fa-trash-alt {
+  font-size: 30px;
+  padding-left: 17px;
+  padding-right: 17px;
+  color: white;
+}
+
+.wide-button {
+  width: 120%;
+}
+
 .band-profile-heading {
   color: black;
   background-color: $neon-yellow;

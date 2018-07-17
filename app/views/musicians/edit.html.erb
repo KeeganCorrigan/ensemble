@@ -1,0 +1,27 @@
+<div class="row">
+  <div class="col-3">
+  </div>
+  <div class="col-4">
+  <%= form_for @musician, :html => { :class => 'base-forms' } do |f| %>
+      <%= f.label :name %>
+    <div class="form-group">
+      <%= f.text_field :name, class:"input-medium" %>
+    </div>
+      <%= f.label :instrument %>
+    <div>
+      <%= f.text_field :instrument %>
+    </div>
+      <%= f.label :profile %>
+    <div class="form-group">
+      <%= f.text_field :profile %>
+    </div>
+      <%= f.label :password %>
+    <div class="form-group">
+      <%= f.password_field :password %>
+    </div>
+    <div class="form-group">
+      <%= f.submit "Update profile", class:"submit-button btn" %>
+    </div>
+  </div>
+</div>
+<% end %>

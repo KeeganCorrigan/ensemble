@@ -11,4 +11,8 @@ class Band < ApplicationRecord
   def user_in_band?(id)
     musicians.where(id: id).exists?
   end
+
+  def owner
+    musicians.first
+  end
 end
