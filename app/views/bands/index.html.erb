@@ -1,6 +1,7 @@
 
   <h1> Bands </h1>
   <% @bands.each do |band| %>
+  <% if band.musicians.first %>
   <%= link_to musician_band_path(band.musicians.first, band) do %>
   <div class="mp-container">
     <div class="picture-container">
@@ -19,5 +20,6 @@
           <% end %>
       </div>
   </div>
+  <% end %>
   <% end %>
   <% end %>

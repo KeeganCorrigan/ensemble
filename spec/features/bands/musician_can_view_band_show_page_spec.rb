@@ -81,6 +81,22 @@ describe "a musician goes to band show page" do
     click_on "Break up the band"
 
     expect(current_path).to eq(root_path)
-    expect(musician_1.bands).to eq(nil)
+    expect(BandMusician.count).to eq(0)
+  end
+
+  it "deletes band if user is last person in band" do
+    musician_1 = Musician.create!(name:"iuhasudh", username: "oauihdiuhas", instrument:"guitar", profile:"ouhaudhasiuhui iuhiuhdsa uhiuhw19hsa", password:"1234")
+    band_1 = musician_1.bands.create(name:"pink floyd", genre:"rock", photo:"ioaodj")
+
+    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(musician_1)
+
+    visit musician_band_path(musician_1, band_1)
+
+    click_on "Break up the band"
+
+    expect(current_path).to eq(root_path)
+    expect(page).to have_content("You left pink floyd")
+    expect(BandMusician.count).to eq(0)
+    expect(Band.count).to eq(0)
   end
 end

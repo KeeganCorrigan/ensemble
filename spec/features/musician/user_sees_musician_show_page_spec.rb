@@ -90,4 +90,16 @@ describe "a user visits their profile page" do
     expect(current_path).to eq(root_path)
     expect(page).to have_content("So long space cowboy")
   end
+
+  it "can see a join bands link if it is not in any bands" do
+    musician_1 = Musician.create!(name:"iuhasudh", username: "oauihdiuhas", instrument:"guitar", profile:"ouhaudhasiuhui iuhiuhdsa uhiuhw19hsa", password:"1234")
+
+    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(musician_1)
+
+    visit musician_path(musician_1)
+
+    click_on "Need a band?"
+
+    expect(current_path).to eq(musician_bands_path(musician_1))
+  end
 end

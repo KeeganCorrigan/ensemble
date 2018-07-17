@@ -1,5 +1,5 @@
 class BandsController < ApplicationController
-  before_action :set_musician, only: [:new, :create, :show, :edit, :update]
+  before_action :set_musician, only: [:new, :create, :show, :edit, :update, :destroy]
   before_action :set_band, only: [:show, :edit, :update, :destroy]
 
   def new
@@ -25,6 +25,17 @@ class BandsController < ApplicationController
     else
       flash.now[:alert] = @band.errors.full_messages.join("<br>").html_safe
       render :edit
+    end
+  end
+
+  def destroy
+    if current_user && @band.owner
+      name = @band.name
+      @band.destroy
+
+      flash[:success] = "You broke up #{name}"
+      
+      redirect_to musician_path(current_user)
     end
   end
 

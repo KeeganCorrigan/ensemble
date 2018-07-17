@@ -16,6 +16,10 @@ class BandMusiciansController < ApplicationController
     if @band.user_in_band?(params[:musician_id])
       BandMusician.find_by(band_id: @band.id, musician_id: params[:musician_id]).destroy
 
+      if @band.musicians.count == 0
+        @band.destroy
+      end
+
       redirect_to root_path
 
       flash[:success] = "You left #{band_name}"
