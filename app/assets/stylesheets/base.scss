@@ -1,11 +1,100 @@
 @import "shared_values";
 
+.fa-microphone-alt-slash {
+  font-size: 50px;
+  margin-left: 35%;
+  margin-top: 10%;
+  margin-bottom: 10%;
+}
+
+.profile-container {
+  width: 100%;
+}
+
+.hidden {
+  display: none;
+}
+
+.musician-profile-manager {
+  display: flex;
+  align-items: center;
+}
+
+.musician-profile-heading {
+  flex-grow: 1;
+}
+
+.fa-edit, .fa-trash-alt {
+  font-size: 30px;
+  padding-left: 17px;
+  padding-right: 17px;
+  color: white;
+}
+
+.wide-button {
+  width: 120%;
+}
+
+.band-profile-heading {
+  color: black;
+  background-color: $neon-yellow;
+  font-weight: bold;
+  width: 200%;
+}
+
+.alert {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+.profile-text {
+  padding-left: 10px;
+  margin: 0;
+}
+
+.profile-heading {
+  padding-bottom: 0;
+  background-color: $neon-blue;
+  margin-bottom: 0;
+  padding-left: 10px;
+}
+
+.mp-container {
+  display: flex;
+  background-color: black;
+  border-top: 1px solid $neon-blue;
+  border-bottom: 1px solid $neon-blue;
+  animation-name: color;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  margin-bottom: 15px;
+  color: white;
+  align-items: center;
+}
+
+.mp-show-container {
+  display: flex;
+  background-color: black;
+  border-top: 1px solid $neon-blue;
+  border-bottom: 1px solid $neon-blue;
+  animation-name: color;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  margin-bottom: 15px;
+  color: white;
+}
+
+.musician-container-band-show {
+  padding-left: 30px;
+
+}
+
 * {
     box-sizing: border-box
 }
 
 h1 {
   padding-top: 15px;
+  padding-left: 10px;
 }
 
 #sign-up-text {
@@ -34,24 +123,19 @@ a {
   margin: 0 auto;
 }
 
-.profile-text {
-  padding-top: 6px;
-  padding-bottom: 6px;
-}
-
-.profile-container {
-  margin-top: 30px;
-  background-color: black;
-  border: 1px solid $neon-blue;
-  border-radius: 5px;
-  animation-name: color;
-  animation-duration: 5s;
-  animation-iteration-count: infinite;
-}
 
 .musician-container {
   padding-top: 25px;
   padding-bottom: 25px;
+  background-color: black;
+  width: 50%;
+}
+
+.musician-container-show {
+  padding-top: 25px;
+  padding-bottom: 25px;
+  background-color: black;
+  width: 45%;
 }
 
 .col-centered{
@@ -60,12 +144,23 @@ a {
 }
 
 .imgdiv {
-  width: 200px;
-  height: 200px;
+  width: 80px;
+  height: 80px;
   background-image: url("https://s3-us-west-1.amazonaws.com/kc-ensemble/muppet_1.jpg");
   border-radius: 50%;
   background-size: cover;
   margin: auto;
+  margin-bottom: 10px;
+}
+
+.create-button {
+  text-align: center;
+}
+
+.picture-container {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 10px;
 }
 .base-forms {
   margin-top: 50px;

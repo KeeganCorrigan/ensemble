@@ -1,23 +1,55 @@
-<div class="col-sm-12 .col-centered text-center">
-  <div class="profile-container">
-    <div class="musician-container">
+<% if current_user && @band.user_in_band?(current_user.id) %>
+  <div class="musician-profile-manager">
+  <h1 class="musician-profile-heading"> You're in the band! </h1>
+  <% if current_user && @band.user_in_band?(current_user.id) && current_user.id == @band.owner.id %>
+    <%= link_to edit_musician_band_path(current_user, @band) do %>
+      <i class="far fa-edit"><span class="hidden">edit</span></i></i>
+    <% end %>
+    <%= link_to musician_band_path(current_user, @band), method:"delete", data: {confirm: "Are you sure?"} do %>
+      <i class="fas fa-trash-alt"><span class="hidden">delete</span></i></i>
+    <% end %>
+  <% end %>
+</div>
+<% end %>
+
+<div class="mp-show-container">
+  <div class="musician-container-show">
       <div class="imgdiv">
       </div>
-        <h5 class="profile-text"><%= @band.name %></h5>
-        <h4 class="profile-text"><%= @band.genre %></h4>
-        <% if current_user && @band.user_in_band?(current_user.id) == false %>
-          <%= link_to "Join the band", musician_band_join_band_path(current_user, @band), method:"post" %>
-        <% end %>
-        <% if current_user && @band.user_in_band?(current_user.id) %>
-          <div id="write-song">
-            <%= link_to "Write a song", new_song_path(current_user, @band), class:"btn submit-button large-button" %>
-          </div>
-        <% end %>
-        <h5>Band members</h5>
+        <h4 class="profile-heading">Name:</h4>
+        <p class="profile-text"><%= @band.name %></p>
+        <h4 class="profile-heading">Genre:</h4>
+        <p class="profile-text"><%= @band.genre %></p>
+        <h4 class="profile-heading">Members:</h4>
+
           <% @band.musicians.each do |musician| %>
-            <p><%= link_to musician.name, musician_path(musician) %></p>
+            <%= link_to musician_path(musician) do %>
+              <div class="member-profile">
+                <p class="profile-text"><%= musician.name %> | <%= musician.instrument %></p>
+              </div>
+            <% end %>
           <% end %>
-        </h5>
+
+        </div>
+        <div class="musician-container-band-show">
+        <h4 class="band-profile-heading">Songs</h4>
+          <% @band.songs.each do |song| %>
+            <%= link_to song.title, song_path(song) %>
+          <% end %>
+        </div>
       </div>
+    <% if current_user && @band.user_in_band?(current_user.id) == false %>
+      <%= link_to "Join the band", musician_band_join_band_path(current_user, @band), method:"post", data: {confirm: "Are you sure?"} %>
+    <% end %>
+    <% if current_user && @band.user_in_band?(current_user.id) %>
+      <div id="write-song">
+        <%= link_to "Write a song", new_song_path(current_user, @band), class:"btn submit-button large-button" %>
+      </div>
+    <% end %>
+
+      <% if current_user && @band.user_in_band?(current_user.id) %>
+        <%= link_to "Break up the band", musician_band_leave_band_path(current_user, @band), method:"delete", data: {confirm: "Are you sure?"}, class:"btn submit-button large-button" %>
+      <% end %>
+    </div>
   </div>
 </div>

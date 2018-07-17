@@ -8,7 +8,7 @@
 Musician.destroy_all
 Band.destroy_all
 
-musician_1 = Musician.create(name: "Roger Waters", username: "Roger", password: "roger", profile: "amazing guitarist and song writer", instrument: "guitar and vocals")
+musician_1 = Musician.create(name: "Roger Waters", username: "roger", password: "roger", profile: "amazing guitarist and song writer", instrument: "guitar and vocals")
 
 musician_2 = Musician.create(name: "Syd Barrett", username: "Syd", password: "syd", profile: "unfortunately, no longer with us", instrument: "guitars and vocal")
 
