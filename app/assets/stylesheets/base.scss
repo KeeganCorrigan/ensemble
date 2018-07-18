@@ -1,12 +1,31 @@
 @import "shared_values";
 
+.audio-panel {
+  display: flex;
+  justify-content: center;
+  margin: 10px;
+}
+
+audio {
+  border: 5px solid $neon-pink;
+  border-radius: 20px;
+  background: $neon-pink;
+}
+
 .iteration-heading {
   padding-left: 8px;
   padding-top: 5px;
 }
 
+
 .iteration-container {
   display: flex;
+}
+
+.iteration-container-song {
+  display: flex;
+  flex-direction: column;
+  background: black;
 }
 
 .iteration-sample-container {
