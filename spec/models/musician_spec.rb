@@ -28,5 +28,6 @@ describe Musician, type: :model do
     expect(user.role).to eq("default")
     expect(user.default?).to be_truthy
   end
+  
 end
 end
