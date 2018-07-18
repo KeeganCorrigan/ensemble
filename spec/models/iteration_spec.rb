@@ -6,11 +6,12 @@ describe Iteration, type: :model do
     it { should validate_presence_of(:comment) }
     it { should validate_presence_of(:author) }
   end
+
   describe "relationships" do
     it { should belong_to(:musician) }
     it { should belong_to(:song) }
   end
-
+  
   describe "instance methods" do
     describe ".fix_drive_link" do
       it "adjusts google drive sharing link to work with iframe player" do
