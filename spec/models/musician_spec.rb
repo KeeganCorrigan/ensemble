@@ -23,11 +23,10 @@ describe Musician, type: :model do
   end
 
   it "can be created as a default user" do
-    user = Musician.create!(name:"iuhasudh", username: "oauihdiuhas", instrument:"guitar", profile:"ouhaudhasiuhui iuhiuhdsa uhiuhw19hsa", password:"1234")
+    user = Musician.create!(name:"iuhasudh", username: "oauihdiuhas", instrument:"guitar", profile:"ouhaudhasiuhui iuhiuhdsa uhiuhw19hsa", password:"1234", role: 0)
 
     expect(user.role).to eq("default")
     expect(user.default?).to be_truthy
   end
-  
 end
 end

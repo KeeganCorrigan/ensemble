@@ -7,6 +7,8 @@ class Musician < ApplicationRecord
                         :profile,
                         :instrument
 
+  enum role: ["default", "admin"]
+
   has_many :band_musicians, dependent: :destroy
   has_many :bands, through: :band_musicians
 
