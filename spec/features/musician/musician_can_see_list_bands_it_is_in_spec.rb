@@ -13,7 +13,7 @@ describe "a musician goes to band page" do
     click_on "Join the band"
 
     expect(current_path).to eq(musician_band_path(musician_2, band_1))
-    expect(page).to have_content("Welcome to the band")
+    expect(page).to have_content("You're in the band")
     expect(band_1.musicians.include?(musician_2)).to eq(true)
   end
 
