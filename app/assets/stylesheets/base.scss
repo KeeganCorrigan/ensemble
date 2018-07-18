@@ -314,8 +314,8 @@ body {
   font-size: 16px;
   background-color: black;
   background-attachment: fixed;
-  background-position: 5% 5%;
-  background-image: url("https://s3-us-west-1.amazonaws.com/kc-ensemble/background-soundwave-edited.jpg")
+  background-position: 50% -100%;
+  background-image: url("https://s3-us-west-1.amazonaws.com/kc-ensemble/CP004_SOUND_EXPANDED-02_1e854728-b0a2-48b5-9d47-3252cf85e27f_1024x1024.jpg")
 }
 
 .nav-link {
@@ -369,6 +369,5 @@ main {
 }
 
 .navbar {
-    border-bottom: 5px solid;
-    border-image: linear-gradient(to right, $neon-pink 33%, $neon-yellow 33%, $neon-yellow 66%,$neon-blue 66%, $neon-blue  100%) 5;
+    border-bottom: 5px solid white;
   }
