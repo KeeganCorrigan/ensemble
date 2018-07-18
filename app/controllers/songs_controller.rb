@@ -13,7 +13,11 @@ class SongsController < ApplicationController
   end
 
   def index
-    @songs = Song.all
+    if params[:musician]
+      @songs = Musician.find(params[:musician]).find_songs
+    else
+      @songs = Song.all
+    end
   end
 
   def show
@@ -47,6 +51,6 @@ class SongsController < ApplicationController
   end
 
   def song_params
-    params.require(:song).permit(:timing, :genre, :title, :band_id)
+    params.require(:song).permit(:timing, :genre, :title, :band_id, :musician_id)
   end
 end

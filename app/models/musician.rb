@@ -12,4 +12,13 @@ class Musician < ApplicationRecord
   has_many :band_musicians, dependent: :destroy
   has_many :bands, through: :band_musicians
 
+  def find_songs
+    bands.inject([]) do |collector, band|
+      band.songs.each do |song|
+        collector << song
+        collector
+      end
+    end
+  end
+
 end

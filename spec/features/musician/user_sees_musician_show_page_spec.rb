@@ -101,4 +101,32 @@ describe "a user visits their profile page" do
 
     expect(current_path).to eq(musician_bands_path(musician_1))
   end
+
+  it "can click on my songs to go to a page of songs it has made" do
+    musician_2 = Musician.create!(name:"iuhasudh", username: "oauifasd", instrument:"guitar", profile:"ouhaudhasiuhui iuhiuhdsa uhiuhw19hsa", password:"1234")
+    band_2 = musician_2.bands.create!(name:"pink", genre:"r9asdik", photo:"i981diadj")
+
+    song_3 = band_2.songs.create!(title: "asdoijqw", timing: "asd0as8d8", genre: "ohue")
+
+    musician_1 = Musician.create!(name:"iuhasudh", username: "oauihdiuhas", instrument:"guitar", profile:"ouhaudhasiuhui iuhiuhdsa uhiuhw19hsa", password:"1234")
+    band_1 = musician_1.bands.create!(name:"pink floyd", genre:"rock", photo:"ioaodj")
+
+    song_1 = band_1.songs.create!(title: "iojoijqw", timing: "asdoad", genre: "ohuadsoia")
+
+    song_2 = band_1.songs.create!(title: "iojijsa9idojjqw", timing: "0jasd0j", genre: "ohudisaj")
+
+
+    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(musician_1)
+
+    visit musician_path(musician_1)
+
+    click_on "My songs"
+
+    save_and_open_page
+
+    expect(page).to have_content(song_1.title)
+    expect(page).to have_content(song_2.title)
+
+    expect(page).to_not have_content(song_3.title)
+  end
 end
