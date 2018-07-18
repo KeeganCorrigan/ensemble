@@ -1,4 +1,5 @@
 class IterationsController < ApplicationController
+  
   def new
     @song = Song.find(params[:song_id])
     @iteration = Iteration.new
@@ -20,7 +21,7 @@ class IterationsController < ApplicationController
 
   def index
     @song = Song.find(params[:song_id])
-    @iterations = @song.iterations.all
+    @iterations = @song.iterations.all.order("created_at desc")
   end
 
   private

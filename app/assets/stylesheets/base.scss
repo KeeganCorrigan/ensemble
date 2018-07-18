@@ -26,6 +26,11 @@ audio {
   display: flex;
   flex-direction: column;
   background: black;
+  border-top: 1px solid $neon-blue;
+  border-bottom: 1px solid $neon-blue;
+  animation-name: color;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
 }
 
 .iteration-sample-container {
