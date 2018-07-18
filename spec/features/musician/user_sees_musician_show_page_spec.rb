@@ -20,7 +20,6 @@ describe "a user visits their profile page" do
     fill_in :musician_name, with: name
     fill_in :musician_instrument, with: instrument
     fill_in :musician_profile, with: profile
-    fill_in :musician_password, with: "1234"
 
     click_on "Update profile"
 
@@ -54,13 +53,13 @@ describe "a user visits their profile page" do
 
     fill_in :musician_name, with: name
     fill_in :musician_instrument, with: instrument
-    fill_in :musician_profile, with: profile
+    fill_in :musician_profile, with: ""
 
     click_on "Update profile"
 
     expect(current_path).to eq(musician_path(musician_1))
 
-    expect(page).to have_content("Password can't be blank")
+    expect(page).to have_content("Profile can't be blank")
   end
 
   it "visits a musicians page but is not that musician" do

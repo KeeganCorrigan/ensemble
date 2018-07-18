@@ -12,8 +12,17 @@ class SongsController < ApplicationController
     redirect_to song_path(@song)
   end
 
+  def index
+    @songs = Song.all
+  end
+
   def show
     @band = Band.find(@song.band_id)
+    @iteration = Iteration.new
+    @iteration_last = @song.iterations.last
+    if @iteration_last
+      @last_author = Musician.find(@iteration_last.musician_id).name
+    end
   end
 
   def destroy

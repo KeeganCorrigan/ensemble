@@ -1,19 +1,66 @@
-<div class="col-sm-12 .col-centered text-center">
-  <h1><%= @song.title %></h1>
-  <div class="profile-container">
-    <div class="musician-container">
-        <h5 class="profile-text"><%= @song.genre %></h5>
-        <h5 class="profile-text"><%= @song.timing %></h5>
-        <h5 class="profile-text"><%= @band.name %></h5>
-        <h5 class="profile-text">Contributors</h5>
-          <% @band.musicians.each do |musician| %>
-          <p> <%= link_to musician.name, musician_path(musician) %></p>
-        <% end %>
-        <% if current_user && @band.user_in_band?(current_user.id) %>
-          <%= link_to "Update song", edit_song_path(@song), class:"btn submit-button large-button" %>
-          <%= link_to "Trash song", song_path(@song), method:"delete", class:"btn submit-button large-button" %>
-          <%= link_to "New version", new_song_iteration_path(@song), class:"btn submit-button large-button" %> 
-        <% end %>
+<div class="musician-profile-manager">
+<h1 class="musician-profile-heading"> <div class="song-heading">SONG</div> <%= @song.title %></h1>
+<% if current_user && @band.user_in_band?(current_user.id) %>
+  <%= link_to edit_song_path(@song) do %>
+    <i class="far fa-edit"><span class="hidden">edit</span></i></i>
+  <% end %>
+  <%= link_to song_path(@song), method:"delete", data: {confirm: "Are you sure?"} do %>
+    <i class="fas fa-trash-alt"><span class="hidden">delete</span></i></i>
+  <% end %>
+<% end %>
+</div>
+
+
+  <div class="mp-show-container">
+    <div class="musician-container-show">
+    <h4 class="profile-heading">Genre:</h4>
+    <p class="profile-text"><%= @song.genre %></p>
+    <h4 class="profile-heading">Timing:</h4>
+    <p class="profile-text"><%= @song.timing %></p>
+    <h4 class="profile-heading">Made by:</h4>
+      <%= link_to @band.name, musician_band_path(current_user, @band), class:"btn submit-button large-button" %>
+    </div>
+    <div class="musician-container-band-show">
+    <h4 class="band-profile-heading">Members</h4>
+      <% @band.musicians.each do |musician| %>
+        <p class="profile-text"><%= link_to musician.name, musician_path(musician) %> | <%= musician.instrument %></p>
+      <% end %>
     </div>
   </div>
+
+<% if @iteration_last %>
+  <div class="iteration-container">
+    <div class="iteration-sample-container">
+      <i class="fas fa-play"></i>
+    </div>
+    <div class="last-iteration">
+      <h4 class="iteration-heading">Last iteration</h4>
+      <h4 class="profile-heading"> Author: </h4>
+      <p class="profile-text"> <%= @last_author %></p>
+      <h4 class="profile-heading"> Comment: </h4>
+      <p class="profile-text"><%= @iteration_last.comment %></p>
+    </div>
+  </div>
+<% end %>
+
+<% if current_user && @band.user_in_band?(current_user.id) %>
+<div class="iteration-form">
+<%= form_for [@song, @iteration], :html => { :class => 'base-forms', multipart: true } do |f| %>
+    <%= f.label :lyrics, class:"cool-label" %>
+  <div class="form-group">
+    <%= f.text_area :content, cols: "47", rows: "20", class:"input-medium form-width, lyric-field" %>
+  </div>
+    <%= f.label :recording, class:"cool-label" %>
+  <div class="form-group">
+    <%= f.text_field :recording, class:"form-width" %>
+  </div>
+    <%= f.label :comment, class:"cool-label" %>
+  <div class="form-group">
+    <%= f.text_area :comment, class: "form-width" %>
+  </div>
+  <div class="form-group">
+    <%= f.submit "Create iteration", class:"submit-button btn large-button" %>
+  </div>
 </div>
+<% end %>
+<% end %>

@@ -39,3 +39,11 @@ end
 <a class="nav-link text-white text-right link-blue-border" href="#">Log in</a>
 
 before_action :authorized?, only: [:index]
+
+https://drive.google.com/file/d/0BympaFShsfT-S0pjdF9PVk9PNDQ/view?usp=sharing
+
+<iframe
+  frameborder="0"
+  width="100%"
+  src="https://drive.google.com/file/d/0BympaFShsfT-S0pjdF9PVk9PNDQ/preview"
+/iframe>

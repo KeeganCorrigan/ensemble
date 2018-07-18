@@ -1,10 +1,61 @@
 @import "shared_values";
 
+.iteration-heading {
+  padding-left: 8px;
+  padding-top: 5px;
+}
+
+.iteration-container {
+  display: flex;
+}
+
+.iteration-sample-container {
+  background: $neon-pink;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30%;
+}
+
+.fa-play {
+  font-size: 90px;
+}
+
+.play-override {
+  font-size: 50px;
+}
+
+.last-iteration {
+  background: black;
+  width: 70%;
+}
+
+.song-heading {
+  background-color: $neon-yellow;
+  color: black;
+}
+
+.iteration-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.form-width {
+  width: 80%;
+}
+
 .fa-microphone-alt-slash {
   font-size: 50px;
   margin-left: 35%;
   margin-top: 10%;
   margin-bottom: 10%;
+}
+
+.mic-override {
+  margin: 0;
+  font-size: 35px;
 }
 
 .profile-container {
@@ -18,10 +69,14 @@
 .musician-profile-manager {
   display: flex;
   align-items: center;
+  padding-top: 15px;
 }
 
 .musician-profile-heading {
   flex-grow: 1;
+  margin-bottom: 0;
+  padding-left: 8px;
+  padding-top: 0;
 }
 
 .fa-edit, .fa-trash-alt {
@@ -39,7 +94,7 @@
   color: black;
   background-color: $neon-yellow;
   font-weight: bold;
-  width: 200%;
+  width: 200px;
 }
 
 .alert {
@@ -81,6 +136,7 @@
   animation-iteration-count: infinite;
   margin-bottom: 15px;
   color: white;
+  margin-top: 25px;
 }
 
 .musician-container-band-show {
@@ -162,10 +218,34 @@ a {
   padding-bottom: 5px;
   padding-left: 10px;
 }
-.base-forms {
-  margin-top: 50px;
+
+.iteration-form {
+  margin-top: 10px;
 }
 
+.align-forms {
+  margin-top: 40px;
+}
+
+.medium-button {
+  width: 50%;
+  font-size: 20px;
+}
+
+.base-forms {
+  margin-top: 40px;
+  width: 80%;
+}
+
+.lyric-field {
+  rows: 25;
+}
+
+.cool-label {
+  background-color: $neon-blue;
+  width: 50%;
+  font-size: 25px;
+}
 .submit-button {
   color: white;
   background-color: $neon-pink;
@@ -221,15 +301,6 @@ body {
     border-color: $neon-blue
   }
 }
-
-.parallax {
-    background-image: url("img_parallax.jpg");
-    height: 500px;
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
 
 main {
   margin-right: 8%;
