@@ -1,4 +1,5 @@
 class IterationsController < ApplicationController
+  
   def new
     @song = Song.find(params[:song_id])
     @iteration = Iteration.new
@@ -8,6 +9,7 @@ class IterationsController < ApplicationController
     @song = Song.find(params[:song_id])
     @iteration = @song.iterations.new(iteration_params)
     @iteration.musician_id = current_user.id
+    @iteration.author = current_user.name
     if @iteration.save
       redirect_to song_path(@song)
     end
@@ -15,6 +17,11 @@ class IterationsController < ApplicationController
 
   def show
     @iteration = Iteration.find(params[:id])
+  end
+
+  def index
+    @song = Song.find(params[:song_id])
+    @iterations = @song.iterations.all.order("created_at desc")
   end
 
   private

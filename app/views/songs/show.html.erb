@@ -11,44 +11,46 @@
 </div>
 
 
-  <div class="mp-show-container">
-    <div class="musician-container-show">
-    <h4 class="profile-heading">Genre:</h4>
-    <p class="profile-text"><%= @song.genre %></p>
-    <h4 class="profile-heading">Timing:</h4>
-    <p class="profile-text"><%= @song.timing %></p>
-    <h4 class="profile-heading">Made by:</h4>
-      <%= link_to @band.name, musician_band_path(current_user, @band), class:"btn submit-button large-button" %>
-    </div>
-    <div class="musician-container-band-show">
-    <h4 class="band-profile-heading">Members</h4>
-      <% @band.musicians.each do |musician| %>
-        <p class="profile-text"><%= link_to musician.name, musician_path(musician) %> | <%= musician.instrument %></p>
-      <% end %>
-    </div>
+<div class="mp-show-container">
+  <div class="musician-container-show">
+  <h4 class="profile-heading">Genre:</h4>
+  <p class="profile-text"><%= @song.genre %></p>
+  <h4 class="profile-heading">Timing:</h4>
+  <p class="profile-text"><%= @song.timing %></p>
+  <h4 class="profile-heading">Made by:</h4>
+    <%= link_to @band.name, musician_band_path(current_user, @band), class:"btn submit-button large-button" %>
   </div>
+  <div class="musician-container-band-show">
+  <h4 class="band-profile-heading">Members</h4>
+    <% @band.musicians.each do |musician| %>
+      <p class="profile-text"><%= link_to musician.name, musician_path(musician) %> | <%= musician.instrument %></p>
+    <% end %>
+  </div>
+</div>
 
 <% if @iteration_last %>
-  <div class="iteration-container">
-    <div class="iteration-sample-container">
-      <i class="fas fa-play"></i>
-    </div>
-    <div class="last-iteration">
+  <div class="iteration-container-song">
       <h4 class="iteration-heading">Last iteration</h4>
       <h4 class="profile-heading"> Author: </h4>
-      <p class="profile-text"> <%= @last_author %></p>
+      <p class="profile-text"> <%= @iteration_last.author %></p>
       <h4 class="profile-heading"> Comment: </h4>
       <p class="profile-text"><%= @iteration_last.comment %></p>
-    </div>
+      <div class="audio-panel">
+        <audio controls>
+          <source src="<%= @iteration_last.recording %>">
+        </audio>
+      </div>
   </div>
 <% end %>
+
+<%= link_to "All iterations", song_iterations_path(@song), class:"btn submit-button large-button" %>
 
 <% if current_user && @band.user_in_band?(current_user.id) %>
 <div class="iteration-form">
 <%= form_for [@song, @iteration], :html => { :class => 'base-forms', multipart: true } do |f| %>
     <%= f.label :lyrics, class:"cool-label" %>
   <div class="form-group">
-    <%= f.text_area :content, cols: "47", rows: "20", class:"input-medium form-width, lyric-field" %>
+    <%= f.text_area :content, cols: "40", rows: "20", class:"input-medium form-width, lyric-field" %>
   </div>
     <%= f.label :recording, class:"cool-label" %>
   <div class="form-group">

@@ -1,25 +1,25 @@
-<div class="col-sm-12 .col-centered text-center">
-  <%= form_for @song, :html => { :class => 'align-forms' } do |f| %>
+<div class="all-forms">
+  <%= form_for @song, :html => { :class => 'base-forms' } do |f| %>
   <% if current_user && current_user.bands.exists? %>
-      <%= f.label :title %>
+      <%= f.label :title, class: "cool-label" %>
     <div class="form-group">
-      <%= f.text_field :title, class:"input-medium" %>
+      <%= f.text_field :title, class: "form-width" %>
     </div>
-      <%= f.label :timing %>
+      <%= f.label :timing, class: "cool-label" %>
     <div class="form-group">
-      <%= f.text_field :timing %>
+      <%= f.text_field :timing, class: "form-width" %>
     </div>
-      <%= f.label :genre %>
+      <%= f.label :genre, class: "cool-label" %>
     <div>
     <div class="form-group">
-      <%= f.text_field :genre %>
+      <%= f.text_field :genre, class: "form-width" %>
     </div>
-    <%= f.label :band %>
+    <%= f.label :band, class: "cool-label" %>
     <div class="form-group">
       <%= f.collection_select :band_id, current_user.bands.order(:name), :id, :name, {}, {class: "custom-select"} %>
     </div>
     <div class="form-group">
-      <%= f.submit "Make the song", class:"submit-button btn medium-button" %>
+      <%= f.submit "Make the song", class:"submit-button btn large-button" %>
     </div>
     <% else %>
       <p> You need a band to write a song!</p>

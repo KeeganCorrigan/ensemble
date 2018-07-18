@@ -1,21 +1,19 @@
-<div class="col-sm-12 .col-centered text-center">
-  <div class="profile-container">
-  <%= form_for [@musician, @band], :html => { :class => 'align-forms' } do |f| %>
-      <%= f.label :name %>
+<div class="all-forms">
+  <%= form_for [@musician, @band], :html => { :class => 'base-forms' } do |f| %>
+      <%= f.label :name, class: "cool-label" %>
     <div class="form-group">
-      <%= f.text_field :name, class:"input-medium" %>
+      <%= f.text_field :name, class: "form-width" %>
     </div>
-      <%= f.label :logo %>
+      <%= f.label :logo, class: "cool-label" %>
     <div class="form-group">
-      <%= f.text_field :photo %>
+      <%= f.text_field :photo, class: "form-width" %>
     </div>
-      <%= f.label :genre %>
+      <%= f.label :genre, class: "cool-label" %>
     <div>
-      <%= f.text_field :genre %>
+      <%= f.text_field :genre, class: "form-width" %>
     </div>
     <div class="form-group">
-      <%= f.submit "Make the band", class:"submit-button btn medium-button" %>
+      <%= f.submit "Make the band", class:"submit-button btn large-button" %>
     </div>
   </div>
-</div>
 <% end %>

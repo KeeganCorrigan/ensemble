@@ -1,28 +1,27 @@
-<div class="col-sm-12 .col-centered text-center">
-  <div class="profile-container">
-  <%= form_for @musician, :html => { :class => 'align-forms' } do |f| %>
-      <%= f.label :name %>
+<div class="all-forms">
+  <%= form_for @musician, :html => { :class => 'base-forms' } do |f| %>
+      <%= f.label :name, class: "cool-label" %>
     <div class="form-group">
-      <%= f.text_field :name, class:"input-medium" %>
+      <%= f.text_field :name, class: "form-width" %>
     </div>
-      <%= f.label :username %>
+      <%= f.label :username, class: "cool-label" %>
     <div class="form-group">
-      <%= f.text_field :username %>
+      <%= f.text_field :username, class: "form-width" %>
     </div>
-      <%= f.label :instrument %>
-    <div>
-      <%= f.text_field :instrument %>
-    </div>
-      <%= f.label :profile %>
+      <%= f.label :instrument, class: "cool-label" %>
     <div class="form-group">
-      <%= f.text_field :profile %>
+      <%= f.text_field :instrument, class: "form-width" %>
     </div>
-      <%= f.label :password %>
+      <%= f.label :profile, class: "cool-label" %>
     <div class="form-group">
-      <%= f.password_field :password %>
+      <%= f.text_field :profile, class: "form-width" %>
+    </div>
+      <%= f.label :password, class: "cool-label" %>
+    <div class="form-group">
+      <%= f.password_field :password, class: "form-width" %>
     </div>
     <div class="form-group">
-      <%= f.submit "Start making music", class:"submit-button btn medium-button" %>
+      <%= f.submit "Start making music", class:"submit-button btn large-button" %>
     </div>
   </div>
 </div>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180714041643) do
+ActiveRecord::Schema.define(version: 20180718042434) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(version: 20180714041643) do
     t.bigint "song_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "author"
     t.index ["musician_id"], name: "index_iterations_on_musician_id"
     t.index ["song_id"], name: "index_iterations_on_song_id"
   end

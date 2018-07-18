@@ -1,0 +1,27 @@
+<%= link_to song_path(@song) do %>
+<div class="musician-profile-manager">
+<h1 class="iteration-profile-heading "> <div class="song-heading">SONG</div> <%= @song.title %></h1>
+</div>
+<% end %>
+<br>
+<h1 class="musician-profile-heading">Iterations</h1>
+<% @iterations.each do |iteration| %>
+  <div class="iteration-container-song">
+    <h4 class="profile-heading"> Created at: </h4>
+    <p class="profile-text"> <%= iteration.created_at.strftime("%b %e, %l:%M %p") %></p>
+      <h4 class="profile-heading"> Author: </h4>
+      <p class="profile-text"> <%= iteration.author %></p>
+      <h4 class="profile-heading"> Comment: </h4>
+      <p class="profile-text"><%= iteration.comment %></p>
+      <h4 class="profile-heading"> Lyics: </h4>
+      <p class="profile-text"><%= iteration.content %></p>
+      <% if iteration.recording %>
+        <div class="audio-panel">
+          <audio controls>
+            <source src="<%= iteration.recording %>">
+          </audio>
+        </div>
+      <% end %>
+    </div>
+    <br>
+<% end %>
