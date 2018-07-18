@@ -1,5 +1,11 @@
 @import "shared_values";
 
+pre {
+  text-align: left;
+  color: white;
+  font-family: $primary-font;
+}
+
 .all-forms {
   display: flex;
   justify-content: center;
