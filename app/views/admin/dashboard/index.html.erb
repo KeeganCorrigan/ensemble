@@ -1,1 +1,9 @@
-<h1> Dashboard </h1>
+<h1 class="show-headings"> Stats: </h1>
+
+<div class="dashboard-container">
+  <h1 class="show-heading">Songs by genre</h1>
+  <%= pie_chart @songs_by_genre.to_a, legend: "bottom", colors: ["#FFFF66", "#50BFE6", "#FF00CC"] %>
+
+  <h1 class="show-heading">Musicians per band</h1>
+  <%= bar_chart @musicians_per_band.to_a, width: "70%", colors: ["#FFFFFF"]%>
+</div>

@@ -20,6 +20,11 @@
       <li class="nav-item">
         <%= link_to "Settings", edit_musician_path(current_user), class:"nav-link text-white text-right link-pink-border" %>
       </li>
+      <% if current_user.admin? %>
+      <li class="nav-item">
+        <%= link_to "Dashboard", admin_dashboard_index_path, class:"nav-link text-white text-right link-pink-border" %>
+      </li>
+      <% end %>
       <li class="nav-item">
         <%= link_to "Logout", logout_path, method:"delete", class:"nav-link text-white text-right link-blue-border" %>
       </li>

@@ -38,4 +38,7 @@
     <div id="create-button">
       <%= link_to "Create a band", new_musician_band_path(@musician), class: "btn submit-button large-button" %>
     </div>
+    <div id="my-song-button">
+      <%= link_to "My songs", "/songs?musician=#{@musician.id}", class: "btn submit-button large-button" %>
+    </div>
 <% end %>

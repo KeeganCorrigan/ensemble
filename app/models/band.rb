@@ -1,8 +1,10 @@
 class Band < ApplicationRecord
 
-  validates_presence_of :name,
-                        :genre,
-                        :photo
+  validates_presence_of :genre,
+                        :photo,
+                        :name
+
+  validates :name, uniqueness: true, presence: true
 
   has_many :band_musicians, dependent: :destroy
   has_many :songs, dependent: :destroy
@@ -14,5 +16,9 @@ class Band < ApplicationRecord
 
   def owner
     musicians.first
+  end
+
+  def self.number_of_musicians
+    joins(:musicians).group("name").count
   end
 end

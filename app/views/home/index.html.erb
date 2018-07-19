@@ -2,6 +2,8 @@
   <% unless current_user %>
     <h1> Don't have an account?</h1>
     <h2 id="sign-up-text"><%= link_to "Sign up", new_musician_path, class:"log-in-text" %></h2>
+    <h1> Have an account?</h1>
+    <h2 id="sign-up-text"><%= link_to "Log in", login_path, class:"log-in-text" %></h2>
   <% end %>
   <% if current_user %>
     <%= link_to "Find bands", bands_path, class:"btn submit-button large-button" %>

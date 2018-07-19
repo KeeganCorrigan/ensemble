@@ -10,8 +10,12 @@ class BandsController < ApplicationController
   def create
     @musician = Musician.find(params[:musician_id])
     @band = @musician.bands.create(band_params)
-
-    redirect_to musician_band_path(@musician, @band)
+    if @band.id
+      redirect_to musician_band_path(@musician, @band)
+    else
+      flash.now[:alert] = @band.errors.full_messages.join("<br>").html_safe
+      render :new
+    end
   end
 
   def edit
@@ -34,7 +38,7 @@ class BandsController < ApplicationController
       @band.destroy
 
       flash[:success] = "You broke up #{name}"
-      
+
       redirect_to musician_path(current_user)
     end
   end

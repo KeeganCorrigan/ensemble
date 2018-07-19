@@ -61,15 +61,15 @@ song_6 = band_3.songs.create( title: "kamikaze love", timing: "4/4", genre: "roc
 
 song_1.iterations.create(
                           content: "Death during stampede for food
-                          two little boys and a little girl
-                          every pressing body, heavy with hunger
-                          young men ripe and fit to burst
-                          languish in the harshness of all things
+two little boys and a little girl
+every pressing body, heavy with hunger
+young men ripe and fit to burst
+languish in the harshness of all things
 
-                          beat up bags of bones the lot
-                          exist to be in harms way
-                          a second deluge of warm bodies crashes
-                          like big waves that eat the surface of the earth",
+beat up bags of bones the lot
+exist to be in harms way
+a second deluge of warm bodies crashes
+like big waves that eat the surface of the earth",
                           recording: "https://s3-us-west-1.amazonaws.com/kc-ensemble/the+hum+of+creation+v+6.wav",
                           comment: "a work in progress, added guitars",
                           author: musician_1.name,
@@ -78,26 +78,26 @@ song_1.iterations.create(
 
   song_1.iterations.create(
                             content: "As a ghost or a shadow\n
-                                      If a color like blue \n
-                                      Yells back at you  \n
-                                      Like a rogue typhoon\n
+If a color like blue \n
+Yells back at you  \n
+Like a rogue typhoon\n
 
-                                      Oh, I can’t hear you\n
-                                      Oh, I can’t hear you\n
+Oh, I can’t hear you\n
+Oh, I can’t hear you\n
 
-                                      Is it a good conversation\n
-                                      Did I speak too soon?\n
-                                      In a frequency unheard of\n
-                                      at the edge of the moon\n
+Is it a good conversation\n
+Did I speak too soon?\n
+In a frequency unheard of\n
+at the edge of the moon\n
 
-                                      Oh, I can’t hear you\n
-                                      Oh, I can’t hear you  \n
+Oh, I can’t hear you\n
+Oh, I can’t hear you  \n
 
-                                      Was it healthy paranoia \n
-                                      When I poured out my heart \n
-                                      With a voice like an elevator \n
-                                      Into the dark
-                                      ",
+Was it healthy paranoia \n
+When I poured out my heart \n
+With a voice like an elevator \n
+Into the dark
+",
                             recording: "https://s3-us-west-1.amazonaws.com/kc-ensemble/my+one+good+eye.wav",
                             comment: "has some piano, needs vocals",
                             author: musician_2.name,
@@ -106,26 +106,25 @@ song_1.iterations.create(
 
 song_3.iterations.create(
                           content: "As a ghost or a shadow\n
-                                    If a color like blue \n
-                                    Yells back at you  \n
-                                    Like a rogue typhoon\n
+  If a color like blue \n
+  Yells back at you  \n
+  Like a rogue typhoon\n
 
-                                    Oh, I can’t hear you\n
-                                    Oh, I can’t hear you\n
+  Oh, I can’t hear you\n
+  Oh, I can’t hear you\n
 
-                                    Is it a good conversation\n
-                                    Did I speak too soon?\n
-                                    In a frequency unheard of\n
-                                    at the edge of the moon\n
+  Is it a good conversation\n
+  Did I speak too soon?\n
+  In a frequency unheard of\n
+  at the edge of the moon\n
 
-                                    Oh, I can’t hear you\n
-                                    Oh, I can’t hear you  \n
+  Oh, I can’t hear you\n
+  Oh, I can’t hear you  \n
 
-                                    Was it healthy paranoia \n
-                                    When I poured out my heart \n
-                                    With a voice like an elevator \n
-                                    Into the dark
-                                    ",
+  Was it healthy paranoia \n
+  When I poured out my heart \n
+  With a voice like an elevator \n
+  Into the dark",
                           recording: "https://s3-us-west-1.amazonaws.com/kc-ensemble/The+coast+is+clear.mp3",
                           comment: "has some piano, needs vocals",
                           author: musician_6.name,
@@ -134,25 +133,25 @@ song_3.iterations.create(
 
 song_3.iterations.create(
                           content: "As a ghost or a shadow\n
-                                    If a color like blue \n
-                                    Yells back at you  \n
-                                    Like a rogue typhoon\n
+  If a color like blue \n
+  Yells back at you  \n
+  Like a rogue typhoon\n
 
-                                    Oh, I can’t hear you\n
-                                    Oh, I can’t hear you\n
+  Oh, I can’t hear you\n
+  Oh, I can’t hear you\n
 
-                                    Is it a good conversation\n
-                                    Did I speak too soon?\n
-                                    In a frequency unheard of\n
-                                    at the edge of the moon\n
+  Is it a good conversation\n
+  Did I speak too soon?\n
+  In a frequency unheard of\n
+  at the edge of the moon\n
 
-                                    Oh, I can’t hear you\n
-                                    Oh, I can’t hear you  \n
+  Oh, I can’t hear you\n
+  Oh, I can’t hear you  \n
 
-                                    Was it healthy paranoia \n
-                                    When I poured out my heart \n
-                                    With a voice like an elevator \n
-                                    Into the dark
+  Was it healthy paranoia \n
+  When I poured out my heart \n
+  With a voice like an elevator \n
+  Into the dark
                                     ",
                           recording: "https://s3-us-west-1.amazonaws.com/kc-ensemble/dun+dun+dun+dun+v+2.wav",
                           comment: "has some piano, needs vocals",
