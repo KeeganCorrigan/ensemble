@@ -122,8 +122,6 @@ describe "a user visits their profile page" do
 
     click_on "My songs"
 
-    save_and_open_page
-
     expect(page).to have_content(song_1.title)
     expect(page).to have_content(song_2.title)
 

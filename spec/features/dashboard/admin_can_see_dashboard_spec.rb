@@ -9,7 +9,7 @@ describe "user visits dashboard" do
 
       visit admin_dashboard_index_path
 
-      expect(page).to have_content("Dashboard")
+      expect(page).to have_content("Stats")
     end
   end
 
@@ -21,7 +21,7 @@ describe "user visits dashboard" do
 
       visit admin_dashboard_index_path
 
-      expect(page).to_not have_content("Dashboard")
+      expect(page).to_not have_content("Stats")
       expect(page).to have_content("The page you were looking for doesn't exist")
     end
   end

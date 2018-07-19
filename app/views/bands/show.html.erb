@@ -23,7 +23,7 @@
         <p class="profile-text"><%= @band.genre %></p>
         <h4 class="profile-heading">Members:</h4>
 
-          <% @band.musicians.each do |musician| %>
+          <% @band.musicians.each do |musician| %>            
               <div class="member-profile">
               <p class="profile-text"><%= link_to musician.name, musician_path(musician) %> | <%= musician.instrument %></p>
               </div>
