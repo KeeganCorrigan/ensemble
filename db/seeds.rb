@@ -29,6 +29,8 @@ musician_9 = Musician.create(name: "george", username: "george", password: "geor
 
 musician_10 = Musician.create(name: "elvis", username: "elvis", password: "elvis", profile: "so, this is where I wound up", instrument: "the heart of america")
 
+musician_11 = Musician.create(name: "keegan", username: "keegan", password: "keegan", profile: "I made this!", instrument: "guitar and vocals", role: 1)
+
 band_1 = musician_1.bands.create(name:"Blue Floyd", photo: "nothing", genre: "psychedelic rock")
 
 BandMusician.create(musician_id: musician_2.id, band_id: band_1.id)

@@ -1,24 +1,30 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Ensemble
 
-Things you may want to cover:
+This a music collaboration app hosted on Heroku. It is meant to be used on a mobile device and is not styled or tested on a full size monitor.
 
-* Ruby version
+### testing
 
-* System dependencies
+To run the test suite, run:
 
-* Configuration
+```
+=> bundle
+=> rspec
+```
 
-* Database creation
+### database stuff
 
-* Database initialization
+A seed file is included with this, before running, I recommend:
 
-* How to run the test suite
+```
+rake db:{drop,create,migrate,seed}
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+that way you can start fresh.
 
-* Deployment instructions
+### other things!
 
-* ...
+If you notice any game breaking errors, please let me know at keegan.rw.corrigan@gmail.com
+
+Thanks for checking it out!

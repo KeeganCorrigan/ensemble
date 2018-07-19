@@ -1,5 +1,7 @@
 @import "shared_values";
 
+
+
 .dashboard-container {
   background:black;
 }
@@ -229,6 +231,7 @@ a {
   font-size: 30px;
   width: 100%;
   border-radius: 0px;
+  overflow-wrap: break-word;
 }
 
 .drop-down-menu {
