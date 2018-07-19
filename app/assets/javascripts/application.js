@@ -11,6 +11,8 @@
 // about supported directives.
 //
 
+//= require Chart.bundle
+//= require chartkick
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap
@@ -27,6 +29,4 @@
 //= require popper
 //= require bootstrap-sprockets
 //= require mediaelement_rails
-//= require Chart.bundle
-//= require chartkick
 //= require_tree .
